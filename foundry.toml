@@ -3,6 +3,7 @@ src = "src"
 out = "out"
 libs = ["lib"]
 gas_reports=["*"]
+remappings = []
 
 [etherscan]
 unknown_chain = { key = "{BASESCAN_KEY}", url = "https://goerli.base.org/" }

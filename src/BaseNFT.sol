@@ -1,4 +1,56 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract BaseNFT {}
+import "openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
+import "openzeppelin-contracts/contracts/access/Ownable.sol";
+
+contract BaseNFT is ERC721, Ownable {
+    string public baseURI;
+    uint public currentTokenId;
+    uint public MAX_SUPPLY = 10000;
+    uint public MINT_PRICE = 0.01 ether;
+    uint public MAX_MINT = 2;
+
+    constructor(
+        string memory name_,
+        string memory symbol_,
+        string memory _baseURI
+    ) ERC721(name_, symbol_) {
+        baseURI = _baseURI;
+    }
+
+    function mint(
+        address to,
+        uint256 tokenId
+    ) public payable returns (uint256) {
+        require(msg.value >= MINT_PRICE, "Not enough ETH");
+        require(tokenId < MAX_SUPPLY, "Max supply reached");
+        _safeMint(to, tokenId);
+
+        currentTokenId++;
+        return tokenId;
+    }
+
+    function burn(uint256 tokenId) public {
+        require(_isApprovedOrOwner(_msgSender(), tokenId), "Not token owner");
+        _burn(tokenId);
+    }
+
+    /* update functions */
+
+    function updateMaxSupply(uint _maxSupply) public onlyOwner {
+        MAX_SUPPLY = _maxSupply;
+    }
+
+    function updateMintPrice(uint _mintPrice) public onlyOwner {
+        MINT_PRICE = _mintPrice;
+    }
+
+    function updateMaxMint(uint _maxMint) public onlyOwner {
+        MAX_MINT = _maxMint;
+    }
+
+    function updateBaseURI(string memory _baseURI) public onlyOwner {
+        baseURI = _baseURI;
+    }
+}
