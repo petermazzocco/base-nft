@@ -25,7 +25,7 @@ contract BaseNFT is ERC721, Ownable {
     ) public payable returns (uint256) {
         require(msg.value >= MINT_PRICE, "Not enough ETH");
         require(tokenId < MAX_SUPPLY, "Max supply reached");
-        _safeMint(to, tokenId);
+        _mint(to, tokenId);
 
         currentTokenId++;
         return tokenId;

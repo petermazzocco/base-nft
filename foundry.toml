@@ -6,7 +6,7 @@ gas_reports=["*"]
 remappings = []
 
 [etherscan]
-unknown_chain = { key = "{BASESCAN_KEY}", url = "https://goerli.base.org/" }
+base-goerli = { key = "{BASESCAN_KEY}", url = "https://goerli.base.org/" }
 
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
