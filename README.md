@@ -41,7 +41,9 @@ forge test --gas-report
 
 ## Auxiliary items
 
-### Contract Address (If needed)
+### Contract Address
+
+If you some how lost your contract address and cannot find it, you can use one that's already deployed to mint:
 
 0x207083E1F0BE72350EbDc7DFF40A80B7CC19390f
 
