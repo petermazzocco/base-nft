@@ -1,69 +1,41 @@
-## Foundry
+## Getting Started
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Hello and welcome to the ERC721 on Foundry and Base tutorial! If you aren't following, please
+head to this link to follow the tutorial:
 
-Foundry consists of:
+Please follow the tutorial and enjoy learning how to use Foundry and deploying on the Base testnet!
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Foundry Documentation
 
-## Documentation
+If you need documentation help for Foundry:
 
 https://book.getfoundry.sh/
 
-## Usage
+## Commands
 
-### Build
+### Compile the Contract
 
 ```shell
 $ forge build
 ```
 
-### Test
+### Test the Contract (with gas-report)
 
 ```shell
-$ forge test
+$ forge test --gas-report
 ```
 
-### Format
+### Deploying the Contract
 
 ```shell
-$ forge fmt
+  forge create --rpc-url <your_rpc_url> --private-key <your_private_key> src/BaseNFT.sol:BaseNFT --constructor-args "Cute Corigs" "CORG" "https://ipfs.io/ipfs/Qmeji1kHmGJBVDKLRXRXG42viH3mog5rQY3kNWgusGgP8h?preview=1&_gl=1*l4fut8*_ga*MTIxNzQ0Mzk0NC4xNjkwNDAzMzgw*_ga_5RMPXG14TE*MTY5NDExMTQwNS4zLjEuMTY5NDExMTQxNC41MS4wLjA"
 ```
 
-### Gas Snapshots
+## Auxiliary items
 
-```shell
-$ forge snapshot
-```
+### Contract Address (If needed)
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+0x207083E1F0BE72350EbDc7DFF40A80B7CC19390f
 
 ### Base URI Link
 

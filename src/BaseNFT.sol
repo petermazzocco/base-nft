@@ -2,9 +2,8 @@
 pragma solidity ^0.8.13;
 
 import "openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
-import "openzeppelin-contracts/contracts/access/Ownable.sol";
 
-contract BaseNFT is ERC721, Ownable {
+contract BaseNFT is ERC721 {
     string public baseURI;
     uint public currentTokenId;
     uint public MAX_SUPPLY = 10000;
@@ -16,6 +15,7 @@ contract BaseNFT is ERC721, Ownable {
         string memory symbol_,
         string memory _baseURI
     ) ERC721(name_, symbol_) {
+        currentTokenId++; // remove the 0 tokenId
         baseURI = _baseURI;
     }
 
@@ -29,28 +29,5 @@ contract BaseNFT is ERC721, Ownable {
 
         currentTokenId++;
         return tokenId;
-    }
-
-    function burn(uint256 tokenId) public {
-        require(_isApprovedOrOwner(_msgSender(), tokenId), "Not token owner");
-        _burn(tokenId);
-    }
-
-    /* update functions */
-
-    function updateMaxSupply(uint _maxSupply) public onlyOwner {
-        MAX_SUPPLY = _maxSupply;
-    }
-
-    function updateMintPrice(uint _mintPrice) public onlyOwner {
-        MINT_PRICE = _mintPrice;
-    }
-
-    function updateMaxMint(uint _maxMint) public onlyOwner {
-        MAX_MINT = _maxMint;
-    }
-
-    function updateBaseURI(string memory _baseURI) public onlyOwner {
-        baseURI = _baseURI;
     }
 }
