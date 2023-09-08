@@ -49,4 +49,4 @@ If you some how lost your contract address and cannot find it, you can use one t
 
 ### Base URI Link
 
-`https://ipfs.io/ipfs/Qmeji1kHmGJBVDKLRXRXG42viH3mog5rQY3kNWgusGgP8h?preview=1&_gl=1*l4fut8*_ga*MTIxNzQ0Mzk0NC4xNjkwNDAzMzgw*_ga_5RMPXG14TE*MTY5NDExMTQwNS4zLjEuMTY5NDExMTQxNC41MS4wLjA.`
+`https://ipfs.io/ipfs/Qmeji1kHmGJBVDKLRXRXG42viH3mog5rQY3kNWgusGgP8h?preview=1&_gl=1*l4fut8*_ga*MTIxNzQ0Mzk0NC4xNjkwNDAzMzgw*_ga_5RMPXG14TE*MTY5NDExMTQwNS4zLjEuMTY5NDExMTQxNC41MS4wLjA`
